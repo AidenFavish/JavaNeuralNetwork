@@ -1,6 +1,28 @@
 
 public abstract class Loss
 {
+    public float regularization_loss(LayerDense layer) {
+
+        float regularizationLoss = 0;
+
+
+        if (layer.weightRegularizerL1 > 0) {
+            regularizationLoss += layer.getWeights().abs().sum() * layer.weightRegularizerL1;
+        }
+
+        if (layer.weightRegularizerL2 > 0) {
+            regularizationLoss += layer.getWeights().pow(2).sum() * layer.weightRegularizerL2;
+        }
+
+        if (layer.biasRegularizerL1 > 0) {
+            regularizationLoss += layer.getBiases().abs().sum() * layer.biasRegularizerL1;
+        }
+
+        if (layer.biasRegularizerL2 > 0) {
+            regularizationLoss += layer.getBiases().pow(2).sum() * layer.biasRegularizerL2;
+        }
+        return regularizationLoss;
+    }
     
     public float calculate(Matrix2D output, int[] y) {
         float[] sampleLosses = this.forward(output, y);

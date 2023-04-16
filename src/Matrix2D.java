@@ -320,4 +320,25 @@ public class Matrix2D
         return null;
     }
 
+    public Matrix2D abs() {
+        float[][] ans = new float[matrix.length][matrix[0].length];
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                ans[r][c] = matrix[r][c] < 0 ? -matrix[r][c] : matrix[r][c];
+            }
+        }
+        return new Matrix2D(ans);
+    }
+
+    public float sum() {
+        float ans = 0;
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                ans += matrix[r][c];
+            }
+        }
+        return ans;
+    }
+
+
 }

@@ -27,13 +27,16 @@ public class Predict
 
     public int[][] predict() {
         // Train the model
-        LayerDense dense1 = new LayerDense(2, 64);
+        float[] regulars = new float[]{0, (float)(Math.pow(10, -4) * 5), 0, (float)(Math.pow(10, -4) * 5)};
+        LayerDense dense1 = new LayerDense(2, 64, regulars);
         ActivationReLU activation1 = new ActivationReLU();
         LayerDense dense2 = new LayerDense(64, 16);
         ActivationReLU activation2 = new ActivationReLU();
         LayerDense dense3 = new LayerDense(16, 3);
         ActivationSoftMaxCCE lossActivation = new ActivationSoftMaxCCE();
         AdamOptimizer optimizer = new AdamOptimizer(0.01f, (float)(5 * Math.pow(10, -5)), (float)(1 * Math.pow(10, -7)), 0.9f, 0.999f);
+        float dataLoss;
+        float regLoss;
         float loss;
         int[] predictions;
         int ctr;
@@ -45,7 +48,10 @@ public class Predict
             dense2.forward(activation1.getOutput());
             activation2.forward(dense2.getOutput());
             dense3.forward(activation2.getOutput());
-            loss = lossActivation.forward(dense3.getOutput(), dataY);
+
+            dataLoss = lossActivation.forward(dense3.getOutput(), dataY);
+            regLoss = lossActivation.loss.regularization_loss(dense1) + lossActivation.loss.regularization_loss(dense2) + lossActivation.loss.regularization_loss(dense3);
+            loss = dataLoss + regLoss;
 
             predictions = lossActivation.getOutput().argmax(1);
             ctr = 0;
@@ -56,7 +62,7 @@ public class Predict
             accuracy = (float) ctr / predictions.length;
 
             if (epoch % 100 == 0) {
-                System.out.println("epoch: " + epoch + ", acc: " + accuracy + ", loss: " + loss + ", lr: " + optimizer.getCurrentLearningRate());
+                System.out.println("epoch: " + epoch + ", acc: " + accuracy + ", loss: " + loss + ", dataLoss: " + dataLoss + ", regLoss: " + regLoss + ", lr: " + optimizer.getCurrentLearningRate());
             }
 
             lossActivation.backward(lossActivation.getOutput(), dataY);

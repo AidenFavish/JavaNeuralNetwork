@@ -2,7 +2,7 @@
 public class ActivationSoftMaxCCE
 {
     private ActivationSoftMax activation;
-    private CategoricalCrossEntropyLoss loss;
+    public CategoricalCrossEntropyLoss loss;
     
     private Matrix2D output;
     

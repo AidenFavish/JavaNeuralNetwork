@@ -3,10 +3,10 @@ public class LayerDense
 {
     private Matrix2D weights;
     private Matrix2D biases;
-    /*private float weightRegularizerL1;
-    private float weightRegularizerL2;
-    private float biasRegularizerL1;
-    private float biasRegularizerL2;*/
+    public float weightRegularizerL1;
+    public float weightRegularizerL2;
+    public float biasRegularizerL1;
+    public float biasRegularizerL2;
     
     private Matrix2D inputs;
     private Matrix2D output;
@@ -27,11 +27,23 @@ public class LayerDense
         weights = Matrix2D.random(n_inputs, n_neurons).multiplyConstant(0.01f);
         
         biases = Matrix2D.zeros(1, n_neurons);
-        /*
+
+        weightRegularizerL1 = 0;
+        weightRegularizerL2 = 0;
+        biasRegularizerL1 = 0;
+        biasRegularizerL2 = 0;
+    }
+
+    public LayerDense(int n_inputs, int n_neurons, float[] regulars) {
+        // Args may consists of wr1, wr2, br1, br2
+        weights = Matrix2D.random(n_inputs, n_neurons).multiplyConstant(0.01f);
+
+        biases = Matrix2D.zeros(1, n_neurons);
+
         weightRegularizerL1 = regulars[0];
         weightRegularizerL2 = regulars[1];
         biasRegularizerL1 = regulars[2];
-        biasRegularizerL2 = regulars[3];*/
+        biasRegularizerL2 = regulars[3];
     }
     
     public void forward(Matrix2D inputs) {
@@ -43,25 +55,25 @@ public class LayerDense
         this.dweights = inputs.T().dot(dvalues);
         this.dbiases = dvalues.sum(0);
         
-        /*if (weightRegularizerL1 > 0) {
+        if (weightRegularizerL1 > 0) {
             dL1 = Matrix2D.onesLike(weights);
             dL1.conditionModify1(weights, 0, -1);
-            dweights.plus(dL1.multiplyConstant(weightRegularizerL1));
+            dweights = dweights.plus(dL1.multiplyConstant(weightRegularizerL1));
         }
         
         if (weightRegularizerL2 > 0) {
-            dweights.plus(weights.multiplyConstant(weightRegularizerL2 * 2));
+            dweights = dweights.plus(weights.multiplyConstant(weightRegularizerL2 * 2));
         }
         
         if (biasRegularizerL1 > 0) {
             dL1 = Matrix2D.onesLike(biases);
             dL1.conditionModify1(biases, 0, -1);
-            dbiases.plus(dL1.multiplyConstant(biasRegularizerL1));
+            dbiases = dbiases.plus(dL1.multiplyConstant(biasRegularizerL1));
         }
         
         if (biasRegularizerL2 > 0) {
-            dbiases.plus(biases.multiplyConstant(2 * biasRegularizerL2));
-        }*/
+            dbiases = dbiases.plus(biases.multiplyConstant(2 * biasRegularizerL2));
+        }
         
         dinputs = dvalues.dot(weights.T());
     }
