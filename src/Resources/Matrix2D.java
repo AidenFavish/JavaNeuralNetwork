@@ -205,6 +205,18 @@ public class Matrix2D
         return this;
     }
 
+    public Matrix2D conditionModify2(Matrix2D x, float y, float z) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (x.getMatrix()[i][j] > y) { // >= was deliberately chosen not to be used
+                    matrix[i][j] = z;
+                }
+            }
+        }
+
+        return this;
+    }
+
     public Matrix2D copy() {
         float[][] ans = new float[matrix.length][matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
@@ -340,5 +352,25 @@ public class Matrix2D
         return ans;
     }
 
+    public Matrix2D conditionOperate(float threshold, Operation foo) {
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                matrix[r][c] = matrix[r][c] <= threshold ? foo.operate(matrix[r][c]) : matrix[r][c];
+            }
+        }
+
+        return this;
+    }
+
+    public Matrix2D times(Matrix2D other) {
+        float[][] ans = new float[matrix.length][matrix[0].length];
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                ans[r][c] = matrix[r][c] * other.getMatrix()[r][c];
+            }
+        }
+
+        return new Matrix2D(ans);
+    }
 
 }

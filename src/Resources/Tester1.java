@@ -1,4 +1,4 @@
-
+// Useless class for now, was using it to test alignment to numpy & python programs
 public class Tester1
 {
     public static void main(String[] args) {

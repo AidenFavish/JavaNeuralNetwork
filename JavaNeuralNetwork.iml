@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/ActivationFunctions" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Loss" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Optimizers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Layers" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
