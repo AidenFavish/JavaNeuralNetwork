@@ -1,0 +1,1 @@
+{"Optimizer":AdamOptimizer@77459877,"Network":[LayerDense@681a9515,ActivationReLU@3af49f1c,LayerDense@19469ea2,ActivationSoftMaxCCE@13221655],"Name":"TesterModel"}

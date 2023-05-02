@@ -1,5 +1,5 @@
 
-public class LayerDense
+public class LayerDense implements LayerPass
 {
     private Matrix2D weights;
     private Matrix2D biases;

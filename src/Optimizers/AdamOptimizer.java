@@ -64,4 +64,6 @@ public class AdamOptimizer implements Optimizer
     public float getCurrentLearningRate() {
         return currentLearningRate;
     }
+
+    public float getLearningRate() { return learningRate; }
 }

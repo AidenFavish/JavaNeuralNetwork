@@ -1,5 +1,5 @@
 
-public class ActivationSoftMaxCCE
+public class ActivationSoftMaxCCE implements LayerPass
 {
     private ActivationSoftMax activation;
     public CategoricalCrossEntropyLoss loss;
@@ -25,6 +25,11 @@ public class ActivationSoftMaxCCE
         activation.forward(inputs);
 
         output = activation.getOutput();
+    }
+
+    @Override
+    public void backward(Matrix2D dvalues) {
+        // TODO finish method
     }
 
     public float calculate(int[] yTrue) {
