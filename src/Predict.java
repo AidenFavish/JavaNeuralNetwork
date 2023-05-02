@@ -27,7 +27,7 @@ public class Predict
 
     public int[][] predict() {
         // Train the model
-        float[] regulars = new float[]{0, (float)(Math.pow(10, -4) * 5), 0, (float)(Math.pow(10, -4) * 5)};
+        float[] regulars = new float[]{(float)(Math.pow(10, -4) * 5), (float)(Math.pow(10, -4) * 5), (float)(Math.pow(10, -4) * 5), (float)(Math.pow(10, -4) * 5)};
         LayerDense dense1 = new LayerDense(2, 64, regulars);
         ActivationReLU activation1 = new ActivationReLU();
         LayerDense dense2 = new LayerDense(64, 16);

@@ -1,5 +1,5 @@
 
-public class AdamOptimizer
+public class AdamOptimizer implements Optimizer
 {
     private float learningRate;
     private float currentLearningRate;

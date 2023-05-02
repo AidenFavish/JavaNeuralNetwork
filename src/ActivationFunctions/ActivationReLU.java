@@ -1,5 +1,5 @@
 
-public class ActivationReLU
+public class ActivationReLU implements LayerPass
 {
     private Matrix2D inputs;
     private Matrix2D output;

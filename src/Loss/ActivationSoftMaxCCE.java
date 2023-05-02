@@ -20,6 +20,16 @@ public class ActivationSoftMaxCCE
         
         return loss.calculate(output, yTrue);
     }
+
+    public void forward(Matrix2D inputs) {
+        activation.forward(inputs);
+
+        output = activation.getOutput();
+    }
+
+    public float calculate(int[] yTrue) {
+        return loss.calculate(output, yTrue);
+    }
     
     public void backward(Matrix2D dvalues, int[] yTrue) {
         int samples = dvalues.getMatrix().length;

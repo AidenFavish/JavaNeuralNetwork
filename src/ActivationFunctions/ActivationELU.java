@@ -1,4 +1,4 @@
-public class ActivationELU {
+public class ActivationELU implements LayerPass {
 
     private float alpha;
     private Matrix2D inputs;

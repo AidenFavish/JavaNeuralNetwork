@@ -1,5 +1,5 @@
 
-public class ActivationSoftMax
+public class ActivationSoftMax implements LayerPass
 {
     private Matrix2D inputs;
     private Matrix2D output;
