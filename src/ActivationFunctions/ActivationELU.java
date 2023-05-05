@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 public class ActivationELU implements LayerPass {
 
     private float alpha;
@@ -41,4 +43,14 @@ public class ActivationELU implements LayerPass {
     public float getAlpha() { return alpha; }
 
     public void setAlpha(float x) { alpha = x; }
+
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSON() {
+        JSONObject ans = new JSONObject();
+
+        ans.put("Name", "ActivationELU");
+
+        return ans;
+    }
+
 }

@@ -1,3 +1,4 @@
+import org.json.simple.JSONObject;
 
 public class AdamOptimizer implements Optimizer
 {
@@ -66,4 +67,16 @@ public class AdamOptimizer implements Optimizer
     }
 
     public float getLearningRate() { return learningRate; }
+
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSON() {
+        JSONObject ans = new JSONObject();
+        ans.put("Learning Rate", learningRate);
+        ans.put("Decay", decay);
+        ans.put("Epsilon", epsilon);
+        ans.put("Beta1", beta1);
+        ans.put("Beta2", beta2);
+        return ans;
+    }
+
 }

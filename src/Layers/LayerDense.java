@@ -1,3 +1,4 @@
+import org.json.simple.JSONObject;
 
 public class LayerDense implements LayerPass
 {
@@ -109,4 +110,20 @@ public class LayerDense implements LayerPass
     public void setBiases(Matrix2D x) {
         biases = x;
     }
+
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSON() {
+        JSONObject ans = new JSONObject();
+
+        ans.put("Name", "LayerDense");
+        ans.put("Weights", weights.getJSON());
+        ans.put("Biasses", weights.getJSON());
+        ans.put("WeightRegular1", weightRegularizerL1);
+        ans.put("WeightRegular2", weightRegularizerL2);
+        ans.put("BiasRegular1", biasRegularizerL1);
+        ans.put("BiasRegular2", biasRegularizerL2);
+
+        return ans;
+    }
+
 }

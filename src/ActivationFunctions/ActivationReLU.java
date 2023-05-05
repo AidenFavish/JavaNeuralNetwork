@@ -1,3 +1,4 @@
+import org.json.simple.JSONObject;
 
 public class ActivationReLU implements LayerPass
 {
@@ -30,4 +31,14 @@ public class ActivationReLU implements LayerPass
     public Matrix2D getDInputs() {
         return dinputs;
     }
+
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSON() {
+        JSONObject ans = new JSONObject();
+
+        ans.put("Name", "ActivationReLU");
+
+        return ans;
+    }
+
 }

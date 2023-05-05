@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 public interface LayerPass {
     public void forward(Matrix2D inputs);
 
@@ -6,5 +8,7 @@ public interface LayerPass {
     public Matrix2D getOutput();
 
     public Matrix2D getDInputs();
+
+    public JSONObject getJSON();
 
 }

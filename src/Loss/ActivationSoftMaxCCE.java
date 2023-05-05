@@ -1,3 +1,4 @@
+import org.json.simple.JSONObject;
 
 public class ActivationSoftMaxCCE implements LayerPass
 {
@@ -54,5 +55,14 @@ public class ActivationSoftMaxCCE implements LayerPass
     
     public Matrix2D getDInputs() {
         return dinputs;
+    }
+
+    @SuppressWarnings("unchecked")
+    public JSONObject getJSON() {
+        JSONObject ans = new JSONObject();
+
+        ans.put("Name", "ActivationSoftMaxCCE");
+
+        return ans;
     }
 }

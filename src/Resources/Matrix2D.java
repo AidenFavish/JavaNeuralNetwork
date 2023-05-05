@@ -1,3 +1,5 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class Matrix2D
 {
@@ -371,6 +373,21 @@ public class Matrix2D
         }
 
         return new Matrix2D(ans);
+    }
+
+    public JSONArray getJSON() {
+        JSONArray outer = new JSONArray();
+        JSONArray inner;
+
+        for (int r = 0; r < matrix.length; r++) {
+            inner = new JSONArray();
+            for (int c = 0; c < matrix[0].length; c++) {
+                inner.add(matrix[r][c]);
+            }
+            outer.add(inner);
+        }
+
+        return outer;
     }
 
 }

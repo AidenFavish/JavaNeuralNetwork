@@ -117,17 +117,15 @@ public class Model {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public void save(String path) {
         // TODO organize JSON path and structure
         JSONObject model = new JSONObject();
-        JSONObject optimizerBlock = new JSONObject();
-
-        optimizerBlock.put("Learning Rate", optimizer.getLearningRate());
 
         //Insert the data
         model.put("Name", name);
-        model.put("Optimizer", optimizerBlock);
-        model.put("Network", network);
+        model.put("Optimizer", optimizer.getJSON());
+        model.put("Network", constructJSONNetwork());
 
         try {
             FileWriter file = new FileWriter(path);
@@ -139,6 +137,17 @@ public class Model {
             //
         }
         System.out.println("JSON file created: "+model);
+    }
+
+    @SuppressWarnings("unchecked")
+    private JSONArray constructJSONNetwork() {
+        JSONArray ans = new JSONArray();
+
+        for (LayerPass layer: network) {
+            ans.add(layer.getJSON());
+        }
+
+        return ans;
     }
 
 }
