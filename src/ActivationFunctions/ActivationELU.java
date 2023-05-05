@@ -53,4 +53,9 @@ public class ActivationELU implements LayerPass {
         return ans;
     }
 
+    @Override
+    public String toString() {
+        return "Activation ELU";
+    }
+
 }

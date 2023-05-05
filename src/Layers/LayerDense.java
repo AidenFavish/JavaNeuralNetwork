@@ -46,6 +46,17 @@ public class LayerDense implements LayerPass
         biasRegularizerL1 = regulars[2];
         biasRegularizerL2 = regulars[3];
     }
+
+    public LayerDense(Matrix2D theWeights, Matrix2D theBiases, float wr1, float wr2, float br1, float br2) {
+        weights = theWeights;
+
+        biases = theBiases;
+
+        weightRegularizerL1 = wr1;
+        weightRegularizerL2 = wr2;
+        biasRegularizerL1 = br1;
+        biasRegularizerL2 = br2;
+    }
     
     public void forward(Matrix2D inputs) {
         this.inputs = inputs;
@@ -117,13 +128,18 @@ public class LayerDense implements LayerPass
 
         ans.put("Name", "LayerDense");
         ans.put("Weights", weights.getJSON());
-        ans.put("Biasses", weights.getJSON());
+        ans.put("Biases", weights.getJSON());
         ans.put("WeightRegular1", weightRegularizerL1);
         ans.put("WeightRegular2", weightRegularizerL2);
         ans.put("BiasRegular1", biasRegularizerL1);
         ans.put("BiasRegular2", biasRegularizerL2);
 
         return ans;
+    }
+
+    @Override
+    public String toString() {
+        return "LayerDense (" + (weights.getMatrix().length) + ", " + (weights.getMatrix()[0].length) + ")";
     }
 
 }

@@ -1,7 +1,12 @@
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.sql.Array;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Model {
@@ -13,6 +18,20 @@ public class Model {
         this.name = name;
         this.optimizer = optimizer;
         this.network = new ArrayList<LayerPass>();
+    }
+
+    public Model(String path) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject obj = (JSONObject) parser.parse(new FileReader(path));
+
+            this.name = (String) obj.get("Name");
+            this.optimizer = decodeOptimizer((JSONObject) obj.get("Optimizer"));
+            this.network = decodeNetwork((JSONArray) obj.get("Network"));
+
+        } catch(Exception e) {
+            System.out.println("Error thrown loading model: " + e);
+        }
     }
 
     public void addLayer(LayerPass layer) {
@@ -148,6 +167,68 @@ public class Model {
         }
 
         return ans;
+    }
+
+    private Optimizer decodeOptimizer(JSONObject obj) {
+        Optimizer ans;
+        String objName = (String) obj.get("Name");
+        if (objName.equals("Adam Optimizer")) {
+            ans = new AdamOptimizer((float)((double) obj.get("Learning Rate")), (float)((double) obj.get("Decay")), (float)((double) obj.get("Epsilon")), (float)((double) obj.get("Beta1")), (float)((double) obj.get("Beta2")));
+        } else {
+            ans = new AdamOptimizer(0.01f, (float)(5 * Math.pow(10, -5)), (float)(1 * Math.pow(10, -7)), 0.9f, 0.999f);
+        }
+        return ans;
+    }
+
+    private List<LayerPass> decodeNetwork(JSONArray arr) {
+        List<LayerPass> ans = new ArrayList<LayerPass>();
+
+        for (Object obj: arr) {
+            ans.add((LayerPass) decodeLayer((JSONObject) obj));
+        }
+
+        return ans;
+    }
+
+    private LayerPass decodeLayer(JSONObject obj) {
+        String layerName = (String) obj.get("Name");
+        LayerPass ans;
+
+        switch (layerName) {
+            case "LayerDense" ->
+                    ans = new LayerDense(decodeMatrix((JSONArray) obj.get("Weights")), decodeMatrix((JSONArray) obj.get("Biases")), (float)((double) obj.get("WeightRegular1")), (float)((double) obj.get("WeightRegular2")), (float)((double) obj.get("BiasRegular1")), (float)((double) obj.get("BiasRegular2")));
+            case "ActivationELU" -> ans = new ActivationELU();
+            case "ActivationReLU" -> ans = new ActivationReLU();
+            case "ActivationSoftMax" -> ans = new ActivationSoftMax();
+            case "ActivationSoftMaxCCE" -> ans = new ActivationSoftMaxCCE();
+            default -> {
+                System.out.println("Layer Pass corrupted");
+                ans = null;
+            }
+        }
+
+        return ans;
+    }
+
+    private Matrix2D decodeMatrix(JSONArray arr) {
+        float[][] ans = new float[arr.size()][((JSONArray) arr.get(0)).size()];
+
+        for (int r = 0; r < ans.length; r++) {
+            for (int c = 0; c < ans[0].length; c++) {
+                ans[r][c] = (float) ((double) ((JSONArray) arr.get(r)).get(c));
+            }
+        }
+
+        return new Matrix2D(ans);
+    }
+
+    @Override
+    public String toString() {
+        String ans = "--------------------------\nName: " + name + "\nOptimizer: " + optimizer + "\nNetwork:\n";
+        for (LayerPass layer: network) {
+            ans += "\t" + layer + "\n";
+        }
+        return ans + "--------------------------";
     }
 
 }

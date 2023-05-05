@@ -71,12 +71,18 @@ public class AdamOptimizer implements Optimizer
     @SuppressWarnings("unchecked")
     public JSONObject getJSON() {
         JSONObject ans = new JSONObject();
+        ans.put("Name", "Adam Optimizer");
         ans.put("Learning Rate", learningRate);
         ans.put("Decay", decay);
         ans.put("Epsilon", epsilon);
         ans.put("Beta1", beta1);
         ans.put("Beta2", beta2);
         return ans;
+    }
+
+    @Override
+    public String toString() {
+        return "Adam Optimizer\n\tLearning Rate: " + learningRate + "\n\tDecay: " + decay + "\n\tEpsilon: " + epsilon + "\n\tBeta1: " + beta1 + "\n\tBeta2: " + beta2;
     }
 
 }

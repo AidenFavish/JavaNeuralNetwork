@@ -65,4 +65,9 @@ public class ActivationSoftMaxCCE implements LayerPass
 
         return ans;
     }
+
+    @Override
+    public String toString() {
+        return activation.toString();
+    }
 }

@@ -41,4 +41,9 @@ public class ActivationReLU implements LayerPass
         return ans;
     }
 
+    @Override
+    public String toString() {
+        return "Activation ReLU";
+    }
+
 }
