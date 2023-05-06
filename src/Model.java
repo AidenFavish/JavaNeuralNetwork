@@ -4,11 +4,9 @@ import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import java.sql.Array;
-import java.sql.SQLOutput;
 import java.util.*;
 
+@SuppressWarnings("unused")
 public class Model {
     private String name;
     private Optimizer optimizer;
@@ -17,7 +15,7 @@ public class Model {
     public Model(String name, Optimizer optimizer) {
         this.name = name;
         this.optimizer = optimizer;
-        this.network = new ArrayList<LayerPass>();
+        this.network = new ArrayList<>();
     }
 
     public Model(String path) {
@@ -58,9 +56,9 @@ public class Model {
             lossActivation = (ActivationSoftMaxCCE) network.get(network.size() - 1);
             dataLoss = lossActivation.calculate(dataY);
             regLoss = 0;
-            for (int i = 0; i < network.size(); i++) {
-                if (network.get(i) instanceof LayerDense) {
-                    regLoss += lossActivation.loss.regularization_loss((LayerDense) network.get(i));
+            for (LayerPass layerPass : network) {
+                if (layerPass instanceof LayerDense) {
+                    regLoss += lossActivation.loss.regularization_loss((LayerDense) layerPass);
                 }
             }
             loss = regLoss + dataLoss;
@@ -104,9 +102,9 @@ public class Model {
         lossActivation = (ActivationSoftMaxCCE) network.get(network.size() - 1);
         dataLoss = lossActivation.calculate(dataY);
         regLoss = 0;
-        for (int i = 0; i < network.size(); i++) {
-            if (network.get(i) instanceof LayerDense) {
-                regLoss += lossActivation.loss.regularization_loss((LayerDense) network.get(i));
+        for (LayerPass layerPass : network) {
+            if (layerPass instanceof LayerDense) {
+                regLoss += lossActivation.loss.regularization_loss((LayerDense) layerPass);
             }
         }
         loss = regLoss + dataLoss;
@@ -138,7 +136,6 @@ public class Model {
 
     @SuppressWarnings("unchecked")
     public void save(String path) {
-        // TODO organize JSON path and structure
         JSONObject model = new JSONObject();
 
         //Insert the data
@@ -151,7 +148,6 @@ public class Model {
             file.write(model.toJSONString());
             file.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             //
         }
@@ -181,10 +177,10 @@ public class Model {
     }
 
     private List<LayerPass> decodeNetwork(JSONArray arr) {
-        List<LayerPass> ans = new ArrayList<LayerPass>();
+        List<LayerPass> ans = new ArrayList<>();
 
         for (Object obj: arr) {
-            ans.add((LayerPass) decodeLayer((JSONObject) obj));
+            ans.add(decodeLayer((JSONObject) obj));
         }
 
         return ans;
@@ -224,9 +220,9 @@ public class Model {
 
     @Override
     public String toString() {
-        String ans = "--------------------------\nName: " + name + "\nOptimizer: " + optimizer + "\nNetwork:\n";
+        StringBuilder ans = new StringBuilder("--------------------------\nName: " + name + "\nOptimizer: " + optimizer + "\nNetwork:\n");
         for (LayerPass layer: network) {
-            ans += "\t" + layer + "\n";
+            ans.append("\t").append(layer).append("\n");
         }
         return ans + "--------------------------";
     }

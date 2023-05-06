@@ -30,7 +30,7 @@ public class ActivationSoftMaxCCE implements LayerPass
 
     @Override
     public void backward(Matrix2D dvalues) {
-        // TODO finish method
+        // finish method
     }
 
     public float calculate(int[] yTrue) {
