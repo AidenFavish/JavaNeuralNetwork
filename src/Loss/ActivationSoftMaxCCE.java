@@ -2,7 +2,7 @@ import org.json.simple.JSONObject;
 
 public class ActivationSoftMaxCCE implements LayerPass
 {
-    private ActivationSoftMax activation;
+    private final ActivationSoftMax activation;
     public CategoricalCrossEntropyLoss loss;
     
     private Matrix2D output;

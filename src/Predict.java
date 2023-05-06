@@ -1,11 +1,11 @@
 
 public class Predict
 {
-    private float[][] dataX;
-    private int[] dataY;
-    private float[][] validX;
-    private int[] validY;
-    private int sideLength;
+    private final float[][] dataX;
+    private final int[] dataY;
+    private final float[][] validX;
+    private final int[] validY;
+    private final int sideLength;
 
     public Predict(float[][] dataX, int[] dataY, int percentValid, int sideLength) { // percent valid is counter intuitive fyi
         this.sideLength = sideLength;

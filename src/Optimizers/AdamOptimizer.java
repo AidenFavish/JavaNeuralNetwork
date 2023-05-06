@@ -2,13 +2,13 @@ import org.json.simple.JSONObject;
 
 public class AdamOptimizer implements Optimizer
 {
-    private float learningRate;
+    private final float learningRate;
     private float currentLearningRate;
-    private float decay;
+    private final float decay;
     private int iterations;
-    private float epsilon;
-    private float beta1;
-    private float beta2;
+    private final float epsilon;
+    private final float beta1;
+    private final float beta2;
     
     public AdamOptimizer(float learningRate, float decay, float epsilon, float beta1, float beta2) {
         this.learningRate = learningRate;
