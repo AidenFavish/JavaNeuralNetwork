@@ -99,7 +99,7 @@ public class Matrix2D
                 }
             }
         } else {
-            System.out.println("ahhhh plus error!");
+            System.out.println("ahhhh plus() error!");
         }
 
         return new Matrix2D(ans);

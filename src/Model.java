@@ -6,6 +6,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.util.*;
 
+/**
+ * This class is designed to hold layers and optimization methods to abstract the complex training and inference
+ * processes behind the scenes.
+ */
 @SuppressWarnings("unused")
 public class Model {
     private String name;
@@ -50,9 +54,8 @@ public class Model {
         int[] predictions;
         int ctr;
         float accuracy;
-        for (int epoch = 0; epoch < epochs; epoch++) {
+        for (int epoch = 1; epoch <= epochs; epoch++) {
             pass(dataX);
-
             lossActivation = (ActivationSoftMaxCCE) network.get(network.size() - 1);
             dataLoss = lossActivation.calculate(dataY);
             regLoss = 0;
@@ -77,7 +80,7 @@ public class Model {
 
             lossActivation.backward(lossActivation.getOutput(), dataY);
             for (int i = network.size() - 2; i >= 0; i--) {
-                network.get(i).backward(network.get(i - 1).getDInputs());
+                network.get(i).backward(network.get(i + 1).getDInputs());
             }
 
             optimizer.preUpdateParams();

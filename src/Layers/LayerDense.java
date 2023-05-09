@@ -128,7 +128,7 @@ public class LayerDense implements LayerPass
 
         ans.put("Name", "LayerDense");
         ans.put("Weights", weights.getJSON());
-        ans.put("Biases", weights.getJSON());
+        ans.put("Biases", biases.getJSON());
         ans.put("WeightRegular1", weightRegularizerL1);
         ans.put("WeightRegular2", weightRegularizerL2);
         ans.put("BiasRegular1", biasRegularizerL1);
