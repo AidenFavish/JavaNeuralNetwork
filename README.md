@@ -78,7 +78,28 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+```java
+/** All it takes to train and test a model
+ * 
+ */
+public class Tester {
+    public static void main(String[] args) {
+        Model model = new Model("TesterModel", new AdamOptimizer(0.01f, (float)(5 * Math.pow(10, -5)), (float)(1 * Math.pow(10, -7)), 0.9f, 0.999f));
+        model.addLayer(new LayerDense(2, 8));
+        model.addLayer(new ActivationReLU());
+        model.addLayer(new LayerDense(8, 4));
+        model.addLayer(new ActivationELU());
+        model.addLayer(new LayerDense(4, 3));
+        model.addLayer(new ActivationSoftMaxCCE());
+
+        model.save("Models/TesterModel.json");
+
+        model = new Model("Models/TesterModel.json");
+        model.train(500, new float[][]{{0.1f, 0.1f}, {0.1f, 0.1f}}, new int[]{1, 1});
+        System.out.println(model.predict(new float[]{0.1f, 0.11f}));
+    }
+}
+```
 
 The Java Neural Network is a project designed to help use complex machine learning processes that are often written in Python, in Java. This project helps explore the deep parts of neural networks to make very hands on changes. Efficiency is however not priority number 1 (because if it was you wouldn't be using Java), however multithreading and complex fast matrix operations are coming soon; more compatability and learning features are prioritized higher. 
 
@@ -98,6 +119,7 @@ To get a local copy up and running follow these simple example steps.
 1. Download the jar files or the classes individually to get started
 2. Import the jar files or classes into your project and start working
 3. Getting started with the model class will be the easiest way to start learning the network syntax.
+4. [Use our JavaDoc](https://github.com/AidenFavish/JavaNeuralNetwork/README_images/JavaDocs/package-summary.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,7 +130,7 @@ To get a local copy up and running follow these simple example steps.
 
 The Java Neural Network is perfect for training using Reinforcement Learning Techniques on your own custom Java environments. It has also been built to perform supervised learning with a wide variety of different options for optimizers and activation functions.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://github.com/AidenFavish/JavaNeuralNetwork/README_images/JavaDocs/package-summary.html)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,7 +181,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Aiden Favish - [@AidenFavish](https://twitter.com/@AidenFavish)
+Aiden Favish - Twitter: [@AidenFavish](https://twitter.com/@AidenFavish)
 
 Project Link: [https://github.com/AidenFavish/JavaNeuralNetwork](https://github.com/AidenFavish/JavaNeuralNetwork)
 
