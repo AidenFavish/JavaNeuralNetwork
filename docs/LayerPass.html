@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ActivationELU.html" title="class in Unnamed Package">ActivationELU</a></code>, <code><a href="ActivationReLU.html" title="class in Unnamed Package">ActivationReLU</a></code>, <code><a href="ActivationSoftMax.html" title="class in Unnamed Package">ActivationSoftMax</a></code>, <code><a href="ActivationSoftMaxCCE.html" title="class in Unnamed Package">ActivationSoftMaxCCE</a></code>, <code><a href="LayerDense.html" title="class in Unnamed Package">LayerDense</a></code></dd>
+<dd><code><a href="ActivationELU.html" title="class in Java Neural Network">ActivationELU</a></code>, <code><a href="ActivationReLU.html" title="class in Java Neural Network">ActivationReLU</a></code>, <code><a href="ActivationSoftMax.html" title="class in Java Neural Network">ActivationSoftMax</a></code>, <code><a href="ActivationSoftMaxCCE.html" title="class in Java Neural Network">ActivationSoftMaxCCE</a></code>, <code><a href="LayerDense.html" title="class in Java Neural Network">LayerDense</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">LayerPass</span></div>
@@ -110,18 +110,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#backward(Matrix2D)" class="member-name-link">backward</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;dvalues)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#backward(Matrix2D)" class="member-name-link">backward</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;dvalues)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forward(Matrix2D)" class="member-name-link">forward</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;inputs)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forward(Matrix2D)" class="member-name-link">forward</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;inputs)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDInputs()" class="member-name-link">getDInputs</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.json.simple.JSONObject</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJSON()" class="member-name-link">getJSON</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOutput()" class="member-name-link">getOutput</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
@@ -141,25 +141,25 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="forward(Matrix2D)">
 <h3>forward</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;inputs)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;inputs)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="backward(Matrix2D)">
 <h3>backward</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">backward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;dvalues)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">backward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;dvalues)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="getOutput()">
 <h3>getOutput</h3>
-<div class="member-signature"><span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getOutput</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getOutput</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getDInputs()">
 <h3>getDInputs</h3>
-<div class="member-signature"><span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getDInputs</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getDInputs</span>()</div>
 </section>
 </li>
 <li>

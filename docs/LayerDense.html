@@ -94,12 +94,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">LayerDense</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></span></div>
+implements <a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -112,10 +112,10 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color"><code><a href="#biasCache" class="member-name-link">biasCache</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first odd-row-color"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#biasMomentums" class="member-name-link">biasMomentums</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
@@ -124,10 +124,10 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <div class="col-first odd-row-color"><code>float</code></div>
 <div class="col-second odd-row-color"><code><a href="#biasRegularizerL2" class="member-name-link">biasRegularizerL2</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color"><code><a href="#weightCache" class="member-name-link">weightCache</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first odd-row-color"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#weightMomentums" class="member-name-link">weightMomentums</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>float</code></div>
@@ -154,8 +154,8 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
  int&nbsp;n_neurons,
  float[]&nbsp;regulars)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(Matrix2D,Matrix2D,float,float,float,float)" class="member-name-link">LayerDense</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;theWeights,
- <a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;theBiases,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(Matrix2D,Matrix2D,float,float,float,float)" class="member-name-link">LayerDense</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;theWeights,
+ <a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;theBiases,
  float&nbsp;wr1,
  float&nbsp;wr2,
  float&nbsp;br1,
@@ -176,37 +176,37 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#backward(Matrix2D)" class="member-name-link">backward</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;dvalues)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#backward(Matrix2D)" class="member-name-link">backward</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;dvalues)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forward(Matrix2D)" class="member-name-link">forward</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;inputs)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#forward(Matrix2D)" class="member-name-link">forward</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;inputs)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBiases()" class="member-name-link">getBiases</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDBiases()" class="member-name-link">getDBiases</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDInputs()" class="member-name-link">getDInputs</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDWeights()" class="member-name-link">getDWeights</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.json.simple.JSONObject</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJSON()" class="member-name-link">getJSON</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOutput()" class="member-name-link">getOutput</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeights()" class="member-name-link">getWeights</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiases(Matrix2D)" class="member-name-link">setBiases</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;x)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setBiases(Matrix2D)" class="member-name-link">setBiases</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;x)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeights(Matrix2D)" class="member-name-link">setWeights</a><wbr>(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;x)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWeights(Matrix2D)" class="member-name-link">setWeights</a><wbr>(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;x)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -255,25 +255,25 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <li>
 <section class="detail" id="weightMomentums">
 <h3>weightMomentums</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">weightMomentums</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">weightMomentums</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="weightCache">
 <h3>weightCache</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">weightCache</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">weightCache</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="biasMomentums">
 <h3>biasMomentums</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">biasMomentums</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">biasMomentums</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="biasCache">
 <h3>biasCache</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">biasCache</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">biasCache</span></div>
 </section>
 </li>
 </ul>
@@ -302,8 +302,8 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <li>
 <section class="detail" id="&lt;init&gt;(Matrix2D,Matrix2D,float,float,float,float)">
 <h3>LayerDense</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LayerDense</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;theWeights,
- <a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;theBiases,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LayerDense</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;theWeights,
+ <a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;theBiases,
  float&nbsp;wr1,
  float&nbsp;wr2,
  float&nbsp;br1,
@@ -321,77 +321,77 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <li>
 <section class="detail" id="forward(Matrix2D)">
 <h3>forward</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;inputs)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;inputs)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="LayerPass.html#forward(Matrix2D)">forward</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html#forward(Matrix2D)">forward</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="backward(Matrix2D)">
 <h3>backward</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">backward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;dvalues)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">backward</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;dvalues)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="LayerPass.html#backward(Matrix2D)">backward</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html#backward(Matrix2D)">backward</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getWeights()">
 <h3>getWeights</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getWeights</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getWeights</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getBiases()">
 <h3>getBiases</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getBiases</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getBiases</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getDWeights()">
 <h3>getDWeights</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getDWeights</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getDWeights</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getDBiases()">
 <h3>getDBiases</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getDBiases</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getDBiases</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getOutput()">
 <h3>getOutput</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getOutput</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getOutput</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="LayerPass.html#getOutput()">getOutput</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html#getOutput()">getOutput</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getDInputs()">
 <h3>getDInputs</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a></span>&nbsp;<span class="element-name">getDInputs</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a></span>&nbsp;<span class="element-name">getDInputs</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="LayerPass.html#getDInputs()">getDInputs</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html#getDInputs()">getDInputs</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setWeights(Matrix2D)">
 <h3>setWeights</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setWeights</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;x)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setWeights</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;x)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="setBiases(Matrix2D)">
 <h3>setBiases</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBiases</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Unnamed Package">Matrix2D</a>&nbsp;x)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setBiases</span><wbr><span class="parameters">(<a href="Matrix2D.html" title="class in Java Neural Network">Matrix2D</a>&nbsp;x)</span></div>
 </section>
 </li>
 <li>
@@ -400,7 +400,7 @@ implements <a href="LayerPass.html" title="interface in Unnamed Package">LayerPa
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">org.json.simple.JSONObject</span>&nbsp;<span class="element-name">getJSON</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="LayerPass.html#getJSON()">getJSON</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Unnamed Package">LayerPass</a></code></dd>
+<dd><code><a href="LayerPass.html#getJSON()">getJSON</a></code>&nbsp;in interface&nbsp;<code><a href="LayerPass.html" title="interface in Java Neural Network">LayerPass</a></code></dd>
 </dl>
 </section>
 </li>
