@@ -36,9 +36,9 @@
 <h3 align="center">Java Neural Network</h3>
 
   <p align="center">
-    A completely vanilla Java Neural Netowrk inspired by nnfs. Optimized for categorical inference. WORK IN PROGRESS.
+    A completely vanilla Java Neural Network inspired by nnfs. Optimized for categorical inference. WORK IN PROGRESS.
     <br />
-    <a href="https://github.com/AidenFavish/JavaNeuralNetwork"><strong>Explore the docs »</strong></a>
+    <a href="https://aidenfavish.github.io/JavaNeuralNetwork"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/AidenFavish/JavaNeuralNetwork">View Demo</a>

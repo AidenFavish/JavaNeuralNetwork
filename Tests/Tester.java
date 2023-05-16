@@ -11,7 +11,7 @@ public class Tester {
         model.save("Models/TesterModel.json");
 
         model = new Model("Models/TesterModel.json");
-        model.train(500, new float[][]{{0.1f, 0.1f}, {0.1f, 0.1f}}, new int[]{1, 1});
-        System.out.println(model.predict(new float[]{0.1f, 0.11f}));
+        model.train(500, new float[][]{{0.2f, 0.2f}, {0.1f, 0.1f}}, new int[]{1, 2});
+        System.out.println(model.predict(new float[]{0.15001f, 0.15001f}));
     }
 }
