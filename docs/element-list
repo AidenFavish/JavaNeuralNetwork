@@ -1,1 +1,6 @@
-Java Neural Network
+com.aidenfavish.javaNeuralNetwork.ActivationFunctions
+com.aidenfavish.javaNeuralNetwork.Layers
+com.aidenfavish.javaNeuralNetwork.Loss
+com.aidenfavish.javaNeuralNetwork.Models
+com.aidenfavish.javaNeuralNetwork.Optimizers
+com.aidenfavish.javaNeuralNetwork.Resources

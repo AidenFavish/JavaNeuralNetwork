@@ -79,12 +79,19 @@
 ## About The Project
 
 ```java
+import com.aidenfavish.javaNeuralNetwork.ActivationFunctions.ActivationELU;
+import com.aidenfavish.javaNeuralNetwork.ActivationFunctions.ActivationReLU;
+import com.aidenfavish.javaNeuralNetwork.Layers.LayerDense;
+import com.aidenfavish.javaNeuralNetwork.Loss.ActivationSoftMaxCCE;
+import com.aidenfavish.javaNeuralNetwork.Models.Model;
+import com.aidenfavish.javaNeuralNetwork.Optimizers.AdamOptimizer;
+
 /** All it takes to train and test a model
- * 
+ *
  */
 public class Tester {
     public static void main(String[] args) {
-        Model model = new Model("TesterModel", new AdamOptimizer(0.01f, (float)(5 * Math.pow(10, -5)), (float)(1 * Math.pow(10, -7)), 0.9f, 0.999f));
+        Model model = new Model("TesterModel", new AdamOptimizer(0.01f, (float) (5 * Math.pow(10, -5)), (float) (1 * Math.pow(10, -7)), 0.9f, 0.999f));
         model.addLayer(new LayerDense(2, 8));
         model.addLayer(new ActivationReLU());
         model.addLayer(new LayerDense(8, 4));

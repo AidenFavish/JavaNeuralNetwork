@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.aidenfavish.javaNeuralNetwork.ActivationFunctions"},{"l":"com.aidenfavish.javaNeuralNetwork.Layers"},{"l":"com.aidenfavish.javaNeuralNetwork.Loss"},{"l":"com.aidenfavish.javaNeuralNetwork.Models"},{"l":"com.aidenfavish.javaNeuralNetwork.Optimizers"},{"l":"com.aidenfavish.javaNeuralNetwork.Resources"}];updateSearchResults();
