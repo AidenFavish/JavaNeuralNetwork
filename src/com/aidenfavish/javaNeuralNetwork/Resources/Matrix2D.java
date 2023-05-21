@@ -2,8 +2,7 @@ package com.aidenfavish.javaNeuralNetwork.Resources;
 
 import org.json.simple.JSONArray;
 
-public class Matrix2D
-{
+public class Matrix2D {
     private float[][] matrix;
 
     public Matrix2D(float[][] grid) {
@@ -131,7 +130,7 @@ public class Matrix2D
             for (int j = 0; j < matrix[0].length; j++) {
                 str += " " + matrix[i][j] + " ";
             }
-            str += "]" + (i < matrix.length-1 ? "\n" : "");
+            str += "]" + (i < matrix.length - 1 ? "\n" : "");
         }
         return str + "]";
     }
@@ -245,7 +244,7 @@ public class Matrix2D
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                ans[i][j] = (float)(Math.pow(Math.E, matrix[i][j]));
+                ans[i][j] = (float) (Math.pow(Math.E, matrix[i][j]));
             }
         }
 
@@ -311,7 +310,7 @@ public class Matrix2D
 
         for (int r = 0; r < ans.length; r++) {
             for (int c = 0; c < ans[0].length; c++) {
-                ans[r][c] = (float)(Math.pow(matrix[r][c], x));
+                ans[r][c] = (float) (Math.pow(matrix[r][c], x));
             }
         }
 
@@ -389,6 +388,44 @@ public class Matrix2D
         }
 
         return outer;
+    }
+
+    public Matrix2D log() {
+        float[][] ans = new float[matrix.length][matrix[0].length];
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                ans[r][c] = (float) Math.log(matrix[r][c]);
+            }
+        }
+
+        return new Matrix2D(ans);
+    }
+
+    public float[] mean(int axis) {
+        if (axis == 1) {
+            float sum;
+            float[] ans = new float[matrix.length];
+            for (int r = 0; r < matrix.length; r++) {
+                sum = 0;
+                for (int c = 0; c < matrix[0].length; c++) {
+                    sum += matrix[r][c];
+                }
+                ans[r] = sum / matrix[0].length;
+            }
+            return ans;
+        } else if (axis == 0) {
+            float sum;
+            float[] ans = new float[matrix[0].length];
+            for (int c = 0; c < matrix[0].length; c++) {
+                sum = 0;
+                for (int r = 0; r < matrix.length; r++) {
+                    sum += matrix[r][c];
+                }
+                ans[c] = sum / matrix.length;
+            }
+            return ans;
+        }
+        return null;
     }
 
 }

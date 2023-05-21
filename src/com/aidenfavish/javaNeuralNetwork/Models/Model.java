@@ -139,6 +139,22 @@ public class Model {
         return predictions[0];
     }
 
+    public float predictDisct(float[] data) {
+        pass(new float[][]{data});
+        Matrix2D predictions = network.get(network.size() - 2).getOutput();
+        return predictions.getMatrix()[0][0];
+    }
+
+    public float[] getProb(float[] data) {
+        pass(new float[][]{data});
+        return network.get(network.size() - 1).getOutput().getMatrix()[0];
+    }
+
+    public float[] getProb(float[][] data) {
+        pass(data);
+        return network.get(network.size() - 1).getOutput().mean(0);
+    }
+
     public void pass(float[][] dataX) {
         network.get(0).forward(new Matrix2D(dataX));
         for (int layer = 1; layer < network.size(); layer++) {
@@ -238,5 +254,18 @@ public class Model {
         }
         return ans + "--------------------------";
     }
+
+    public static int sample(float[] prob) {
+        float r = (float)Math.random();
+        float temp = 0;
+        for (int i = 0; i < prob.length; i++) {
+            temp += prob[i];
+            if (r < temp) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
 
 }

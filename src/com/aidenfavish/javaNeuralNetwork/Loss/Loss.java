@@ -2,7 +2,6 @@ package com.aidenfavish.javaNeuralNetwork.Loss;
 
 import com.aidenfavish.javaNeuralNetwork.Layers.*;
 import com.aidenfavish.javaNeuralNetwork.Resources.*;
-import com.aidenfavish.javaNeuralNetwork.ActivationFunctions.*;
 
 public abstract class Loss
 {
@@ -38,8 +37,19 @@ public abstract class Loss
         
         return sum / sampleLosses.length;
     }
+
+    public float calculate(Matrix2D output, Matrix2D y) {
+        float[] sampleLosses = this.forward(output, y);
+        float sum = 0;
+        for (float x: sampleLosses) {
+            sum += x;
+        }
+
+        return sum / sampleLosses.length;
+    }
     
     public abstract float[] forward(Matrix2D yPredict, int[] yTrue);
+    public abstract float[] forward(Matrix2D yPredict, Matrix2D yTrue);
     
     public static Matrix2D clip(Matrix2D x, float lower, float upper) {
         float[][] ans = new float[x.getMatrix().length][x.getMatrix()[0].length];
